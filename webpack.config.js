@@ -10,10 +10,20 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
 
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      '@logos': path.resolve(__dirname, './public/assets/logos/'),
+      '@icons': path.resolve(__dirname, './public/assets/icons/'),
+      '@styles': path.resolve(__dirname, './src/styles/'),
+      '@containers': path.resolve(__dirname, './src/containers/'),
+      '@components': path.resolve(__dirname, './src/components/'),
+      '@routes': path.resolve(__dirname, './src/routes/'),
+      '@pages': path.resolve(__dirname, './src/pages/'),
+    }
   },
 
   module: {
@@ -34,12 +44,24 @@ module.exports = {
       },
 
       {
-        test: /\.s[ac]ss$/,
+        test: /\.(css|scss)$/,
         use: [
           "style-loader",
           "css-loader",
           "sass-loader"
         ],
+      },
+
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash].[name].[ext]',
+            }
+          }
+        ]
       }
     ]
   },
@@ -60,5 +82,6 @@ module.exports = {
     },
     compress: true,
     port: '3005',
+    historyApiFallback: true,
   }
 }

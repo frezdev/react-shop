@@ -9,8 +9,9 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/'
+    filename: '[name].[contenthash].js',
+    publicPath: '/',
+    clean: true,
   },
 
   resolve: {
@@ -54,14 +55,10 @@ module.exports = {
 
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[hash].[name].[ext]',
-            }
-          }
-        ]
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash].[name].[ext]',
+        }
       }
     ]
   },

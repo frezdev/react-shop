@@ -17,8 +17,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@logos': path.resolve(__dirname, './public/assets/logos/'),
-      '@icons': path.resolve(__dirname, './public/assets/icons/'),
+      '@logos': path.resolve(__dirname, './src/assets/logos/'),
+      '@icons': path.resolve(__dirname, './src/assets/icons/'),
       '@styles': path.resolve(__dirname, './src/styles/'),
       '@containers': path.resolve(__dirname, './src/containers/'),
       '@components': path.resolve(__dirname, './src/components/'),
@@ -55,10 +55,7 @@ module.exports = {
 
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[hash].[name].[ext]',
-        }
+        type: 'asset/resource'
       }
     ]
   },

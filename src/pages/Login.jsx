@@ -4,8 +4,8 @@ import '@styles/Login.scss';
 
 function Login() {
   return (
-    <div className="login">
-      <div className="form-container">
+    <div className="Login">
+      <div className="Login-container">
         <img src={logo} alt="logo" className="logo" />
         <form action="/" className="form">
           <label htmlFor="email" className="label">Email address</label>

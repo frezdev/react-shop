@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from '@logos/logo_yard_sale.svg';
 import imgEmail from '@icons/email.svg';
-import '@styles/RecoveryPass.scss'
+import '@styles/PasswordRecovery.scss'
 
-function RecoveryPass() {
+function PasswordRecovery() {
   return (
-    <div className="login">
-      <div className="form-container">
+    <div className="PasswordRecovery">
+      <div className="PasswordRecovery-container">
         <img src={logo} alt="logo" className="logo" />
         <h1 className="title">Email has been sent!</h1>
         <p className="subtitle">Please check your inbox for instructions on how to reset the password</p>
@@ -22,4 +22,4 @@ function RecoveryPass() {
     </div>
   );
 }
-export default RecoveryPass;
+export default PasswordRecovery;

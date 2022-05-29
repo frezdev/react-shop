@@ -7,12 +7,15 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
+  background-color: #fff;
   border-bottom: 1px solid var(--very-light-pink);
+  position: fixed;
+  top: 0;
 }
 .menu {
   display: none;
 }
-.logo {
+.nav-logo {
   width: 150px;
 }
 
@@ -49,6 +52,7 @@ nav {
   color: var(--very-light-pink);
   font-size: var(--sm);
   margin-right: 12px;
+  cursor: pointer;
 }
 .navbar-shopping-cart {
   position: relative;

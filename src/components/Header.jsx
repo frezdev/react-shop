@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Menu from '@components/Menu';
 import logo from '@logos/logo_yard_sale.svg';
 import iconShoppingCart from '@icons/icon_shopping_cart.svg';
@@ -7,14 +7,14 @@ import '@styles/Header.scss';
 
 function Header() { 
   const [toggle, setToggle] = useState(false);
+  const [addClass, setAddClass] = useState('Menu');
 
   const handleToggle = () => {
     setToggle(!toggle);
-    const menu = document.querySelector('.Menu');
-    (toggle)
-      ? menu.classList.remove('toggle')
-      : menu.classList.add('toggle')
-    
+    setTimeout(() => {
+      setAddClass('Menu toggle')
+    }, 10);
+    setAddClass('Menu')
   }
 
   return (
@@ -58,7 +58,7 @@ function Header() {
           </li>
         </ul>
       </div>
-      <Menu />
+      {toggle && <Menu cssClass={addClass} />}
     </nav>
   );
 }

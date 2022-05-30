@@ -1,9 +1,9 @@
 import React from 'react';
 import '@styles/Menu.scss';
 
-function Menu() {
+function Menu({ cssClass }) {
   return (
-    <div className="Menu">
+    <div className={cssClass}>
       <ul>
         <li>
           <a href="/" className="title">My orders</a>
